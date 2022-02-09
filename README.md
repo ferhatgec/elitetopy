@@ -6,10 +6,8 @@
 required_version is 0.1
 
 set ProjectName as "elitetopy"
-
 set HOME        as env "HOME"
 
-set COMPILER_PATH as "/usr/bin/{COMPILER}"
 
 for argument "install" [
     use exec "cargo install --path ."
@@ -34,7 +32,6 @@ if '0.1' != '0.1':
  exit(1)
 ProjectName = 'elitetopy'
 HOME = '/home/gech'
-COMPILER_PATH = '/usr/bin/'
 if len(sys.argv) >= 2 and sys.argv[1] == 'install':
  system('cargo install --path .')
  if Path('/home/gech/.cargo/bin/elitetopy').exists():
