@@ -1,0 +1,17 @@
+required_version is 0.1
+
+set ProjectName as "elitetopy"
+
+set HOME        as env "HOME"
+
+set COMPILER_PATH as "/usr/bin/{COMPILER}"
+
+for argument "install" [
+    use exec "cargo install --path ."
+
+    for exists "{HOME}.cargo/bin/{ProjectName}" [
+        println "{ProjectName} installed to {HOME}.cargo/bin/{ProjectName}."
+    ]
+
+    use signal "exit"
+]
